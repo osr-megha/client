@@ -16,20 +16,20 @@ function App() {
   //const [newDays, setNewDays] = useState();
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/read").then((response)=>{
+    Axios.get("https://mighty-thicket-89142.herokuapp.com/read").then((response)=>{
       setFoodList(response.data);
     })
   }, [])
    
   const addToList = () =>{
-    Axios.post("http://localhost:3001/insert", {
+    Axios.post("https://mighty-thicket-89142.herokuapp.com/insert", {
       foodName: foodName,
       days: days,
     });
   };
 
   const updateFood = (id) =>{
-    Axios.put("http://localhost:3001/update", {
+    Axios.put("https://mighty-thicket-89142.herokuapp.com/update", {
       id:id,
       newFoodName: newFoodName,
       //newDays: newDays,
@@ -37,7 +37,7 @@ function App() {
   };
 
   const deleteFood = (id) =>{
-    Axios.delete(`http://localhost:3001/delete/${id}`);
+    Axios.delete(`https://mighty-thicket-89142.herokuapp.com/delete/${id}`);
   };
 
 
